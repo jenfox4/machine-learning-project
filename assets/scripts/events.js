@@ -2,7 +2,7 @@ const getFormFields = require('../../lib/get-form-fields.js')
 const makePrediction = require('./machine-learning/brain.js')
 const ui = require('./ui.js')
 // const calculate = require('./machine-learning/calculate_rgb.js')
-// const store = require('./store.js')
+const store = require('./store.js')
 
 const showPrediction = function () {
   console.log('show prediction')
@@ -23,6 +23,8 @@ const predict = function (event) {
   const red = data.color.red
   const green = data.color.green
   const blue = data.color.blue
+  const changeFontColor = `rgb(${red}, ${green}, ${blue})`
+  store.changeFontColor = changeFontColor
   const prediction = (makePrediction(red, green, blue))
   const darkConfidence = prediction.dark
   const lightConfidence = prediction.light
