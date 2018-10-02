@@ -20,15 +20,21 @@
             <button class="btn prediction">Let me make a prediction</button>
           </div>
 
-          <div class="color-box">
+          <div class="color-container">
+            <div class="color-box">
+            </div>
+          <button class="btn light">Light Hue</button>
+          <button class="btn dark">Dark Hue</button>
           </div>
 
           <div class="make-prediction">
-            <p> Give me a color in RGB and I will let you know if I think it's light or dark </p>
-            <input type="text" placeholder="red">
-            <input type="text" placeholder="green">
-            <input type="text" placeholder="blue">
-            <button class="btn" type="submit">Submit</button>
+            <p> Give me a color in RGB and I will let you know if I think it's light or dark hue!</p>
+            <form id="prediction">
+              <input name="color[red]" type="number" placeholder="red value 0-255">
+              <input name="color[blue]" type="number" placeholder="green value 0-255">
+              <input name="color[green]" type="number" placeholder="blue value 0-255">
+              <button class="btn" type="submit">Submit</button>
+          </form>
           </div>
 
         <div class="results">
