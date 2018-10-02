@@ -6,8 +6,9 @@ const store = require('../store.js')
 const colorPredictor = function (r, g, b) {
   network.train(colorsArray)
   const result = network.run({r: r, g: g, b: b})
-  store.prediction = result
-  console.log(store.prediction)
+  // store.prediction = result
+  // console.log(store.prediction)
+  return result
 }
 
 module.exports = colorPredictor
