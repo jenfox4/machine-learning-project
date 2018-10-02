@@ -41,15 +41,22 @@ const predict = function (event) {
   event.preventDefault()
   $('.results').empty()
   const data = getFormFields(event.target)
+  changeFontColor(data)
+  const red = data.color.red / 255
+  const green = data.color.green / 255
+  const blue = data.color.blue / 255
+  const prediction = (makePrediction(red, green, blue))
+  const darkConfidence = prediction.dark
+  const lightConfidence = prediction.light
+  displayPrediction(darkConfidence, lightConfidence)
+}
+
+const changeFontColor = function (data) {
   const red = data.color.red
   const green = data.color.green
   const blue = data.color.blue
   const changeFontColor = `rgb(${red}, ${green}, ${blue})`
   store.changeFontColor = changeFontColor
-  const prediction = (makePrediction(red, green, blue))
-  const darkConfidence = prediction.dark
-  const lightConfidence = prediction.light
-  displayPrediction(darkConfidence, lightConfidence)
 }
 
 const displayPrediction = function (dark, light) {
