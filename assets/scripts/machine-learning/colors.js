@@ -8,7 +8,9 @@ let colorsArray = [
   // grey
   {input: {r: 0.6039215686274509, g: 0.6313725490196078, b: 0.6}, output: {light: 1}},
   // white
-  {input: {r: 1, g: 1, b: 1}, output: {light: 1}}
+  {input: {r: 1, g: 1, b: 1}, output: {light: 1}},
+  // almost black
+  {input: {r: 0.2, g: 0.2, b: 0.2}, output: {light: 1}}
 ]
 
 module.exports = colorsArray

@@ -54,6 +54,7 @@ const predict = function (event) {
 
 const displayPrediction = function (dark, light) {
   let confidence = null
+  console.log(dark, light)
   if (dark > light) {
     confidence = Math.round(dark * 100)
     ui.displayPrediction('dark', confidence)
