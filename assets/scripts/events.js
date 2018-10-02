@@ -14,6 +14,15 @@ const showTraining = function () {
   console.log('show training')
   $('.color-container').show()
   $('.make-prediction').hide()
+  randomColor()
+}
+
+const randomColor = function () {
+  const red = Math.floor(Math.random() * 256)
+  const green = Math.floor(Math.random() * 256)
+  const blue = Math.floor(Math.random() * 256)
+  store.colorTraining = `rgb(${red}, ${green}, ${blue})`
+  $('.color-box').css('background', store.colorTraining)
 }
 
 const predict = function (event) {
