@@ -1,9 +1,9 @@
-const calculate = function (r, g, b) {
+const calculate = function (r, g, b, lightOrDark) {
   const red = r / 255
   const green = g / 255
   const blue = b / 255
   let output = null
-  if (red + blue + green >= 1.5) {
+  if (lightOrDark === 'light') {
     output = `light: 1`
   } else {
     output = 'dark: 1'

@@ -1,7 +1,7 @@
 const getFormFields = require('../../lib/get-form-fields.js')
 const makePrediction = require('./machine-learning/brain.js')
 const ui = require('./ui.js')
-// const calculate = require('./machine-learning/calculate_rgb.js')
+const calculate = require('./machine-learning/calculate_rgb.js')
 const store = require('./store.js')
 
 const showPrediction = function () {
@@ -21,8 +21,20 @@ const randomColor = function () {
   const red = Math.floor(Math.random() * 256)
   const green = Math.floor(Math.random() * 256)
   const blue = Math.floor(Math.random() * 256)
-  store.colorTraining = `rgb(${red}, ${green}, ${blue})`
-  $('.color-box').css('background', store.colorTraining)
+  store.redTraining = red
+  store.greenTraining = green
+  store.blueTraining = blue
+  $('.color-box').css('background', `rgb(${red}, ${green}, ${blue})`)
+}
+
+const trainDark = function () {
+  console.log(calculate(store.redTraining, store.greenTraining, store.blueTraining, 'dark'))
+  randomColor()
+}
+
+const trainLight = function () {
+  console.log(calculate(store.redTraining, store.greenTraining, store.blueTraining, 'light'))
+  randomColor()
 }
 
 const predict = function (event) {
@@ -50,13 +62,11 @@ const displayPrediction = function (dark, light) {
     ui.displayPrediction('light', confidence)
   }
 }
-// const train = function () {
-//   const trainingData = calculate(red, green, blue)
-//    create request in database
-// }
 
 module.exports = {
   showPrediction,
   showTraining,
-  predict
+  predict,
+  trainDark,
+  trainLight
 }
