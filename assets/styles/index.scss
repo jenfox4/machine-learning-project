@@ -1,1 +1,22 @@
 @import '~bootstrap/scss/bootstrap';
+
+body {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+img {
+  align-self: center;
+  height: 300px;
+  width: 400px;
+  margin: 10px;
+}
+
+.make-prediction {
+  display: none;
+}
+
+.results {
+  display: none;
+}

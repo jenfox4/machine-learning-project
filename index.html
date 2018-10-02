@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Machine Learning Project</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -12,6 +12,27 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Browser Template</h1>
+      <body class="container-fluid">
+          <img src="https://www.obam.nu/ImageGen.ashx?image=/media/1509/shutterstock_73956799crop.jpg&width=825&constrain=true">
+
+          <div class="buttons">
+            <button class="btn train">Train me</button>
+            <button class="btn prediction">Let me make a prediction</button>
+          </div>
+
+          <div class="color-box">
+          </div>
+
+          <div class="make-prediction">
+            <p> Give me a color in RGB and I will let you know if I think it's light or dark </p>
+            <input type="text" placeholder="red">
+            <input type="text" placeholder="green">
+            <input type="text" placeholder="blue">
+            <button class="btn" type="submit">Submit</button>
+          </div>
+
+        <div class="results">
+          <p> Based on what I've learned, I'd say the color is <span></span></p>
+        </div>
     </body>
 </html>
