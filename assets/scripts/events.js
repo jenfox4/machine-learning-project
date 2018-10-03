@@ -5,13 +5,11 @@ const calculate = require('./machine-learning/calculate_rgb.js')
 const store = require('./store.js')
 
 const showPrediction = function () {
-  console.log('show prediction')
   $('.make-prediction').show()
   $('.color-container').hide()
 }
 
 const showTraining = function () {
-  console.log('show training')
   $('.color-container').show()
   $('.make-prediction').hide()
   randomColor()
@@ -61,7 +59,6 @@ const changeFontColor = function (data) {
 
 const displayPrediction = function (dark, light) {
   let confidence = null
-  console.log(dark, light)
   if (dark > light) {
     confidence = Math.round(dark * 100)
     ui.displayPrediction('dark', confidence)
